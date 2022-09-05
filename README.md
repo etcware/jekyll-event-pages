@@ -3,6 +3,7 @@
 [![Gem Version](https://img.shields.io/gem/v/jekyll-event-pages.svg)](https://rubygems.org/gems/jekyll-event-pages)
 [![Build Status](https://travis-ci.org/field-theory/jekyll-event-pages.png?branch=master)](https://travis-ci.org/field-theory/jekyll-event-pages)
 
+This plugin is deeply inspired by based on [jekyll-category-pages](https://github.com/field-theory/jekyll-category-pages) plugin. It works on an attribute called events in place of categories.
 This plugin adds event index pages with and without pagination.  
 Benefits are:
 * Easy to setup and use, fully compatible with the default [pagination
@@ -205,4 +206,4 @@ The following issues and limitations are known:
 ## License
 
 The gem is available as open source under the terms of the [MIT
-License](https://github.com/field-theory/jekyll-event-pages/blob/master/LICENSE).
+License](https://github.com/etcware/jekyll-event-pages/blob/master/LICENSE).
