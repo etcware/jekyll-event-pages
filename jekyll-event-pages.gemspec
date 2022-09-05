@@ -15,12 +15,12 @@ event overview pages with a custom layout. Optionally, it also adds proper
 pagination for these pages.
 
 Please refer to the README.md file on the project homepage at
-https://github.com/etcware/jekyll-attribute-pages
+https://github.com/etcware/jekyll-event-pages
 EOF
   spec.version = Jekyll::EventPages::VERSION
   spec.authors = ["Alessandra Donnini"]
   spec.email = "a.donnini@etcware.it"
-  spec.homepage = "https://github.com/etcware/jekyll-attribute-pages"
+  spec.homepage = "https://github.com/etcware/jekyll-event-pages"
   spec.licenses = ["MIT"]
 
   spec.files = `git ls-files -z`.split("\x0").select do |f|
