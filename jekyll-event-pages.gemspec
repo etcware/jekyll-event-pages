@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.name = "jekyll-event-pages"
   spec.summary = "Add event index pages with and without pagination."
   spec.description = <<-EOF
-This plugin is for all authors that tag their pages using a selected attribute. It generates
+This plugin is for all authors that tag their pages using events attribute as categories: they can be used simultaneously. It generates
 event overview pages with a custom layout. Optionally, it also adds proper
 pagination for these pages.
 
