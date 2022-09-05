@@ -1,0 +1,16 @@
+# jekyll-category-pages test project configuration 1
+
+title: Test configuration 1
+email: Wolfram.Schroers@field-theory.org
+description: Test configuration 1, no pagination
+baseurl: ""
+url: ""
+markdown: kramdown
+theme: minima
+permalink: /:year/:month/:day/:title:output_ext
+plugins:
+    - jekyll-paginate
+    - jekyll-event-pages
+
+destination: _site1
+

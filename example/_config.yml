@@ -1,0 +1,25 @@
+# jekyll-event-pages example project configuration
+
+# Site settings
+title: jekyll-event-pages Example
+email: a.donnini@etcware.it
+description: >- # this means to ignore newlines until "baseurl:"
+  Example project to demonstrate the jekyll-attribute-pages plugin.
+  Please consult the README at https://rubygems.org/gems/jekyll-attribute-pages
+  for further information.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Configure the plugin here
+# event_path: "jekyll/event" # <- default value
+# event_layout: "event_index.html" # <- default value
+paginate: 2 # <- turn on pagination with two posts per page
+
+# Build settings
+markdown: kramdown
+theme: minima
+permalink: /:year/:month/:day/:title:output_ext
+plugins:
+    - jekyll-paginate
+    - jekyll-attribute-pages
+
