@@ -141,7 +141,7 @@ A event overview with a full listing of all events can be
 created as follows:
 ```html
 <ul>
-{% for event in site.events %}
+{% for event in site.data["events"] %}
 <li><a href="{{ site.url }}/event/{{ event | first | slugify }}/index.html">{{ event | first }}</a></li>
 {% endfor %}
 </ul>

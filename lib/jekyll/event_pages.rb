@@ -16,17 +16,6 @@ require 'jekyll'
 
 module Jekyll
 
-  # aggiunge il metodo events alla classe Site
-  module EventMethod
-  	def events
-  	  post_attr_hash("events")
-  	end
-  end
-  Site.class_eval { include EventMethod }
-  class Site
-  	include EventMethod
-  end
-  
   module EventPages
     INDEXFILE = 'index.html'
 
@@ -46,7 +35,8 @@ module Jekyll
       def generate(site)
         event_base_path = site.config['event_path'] || 'event'
         event_layout_path = File.join('_layouts/', site.config['event_layout'] || 'event_index.html')
-
+		site.data["events"] = site.post_attr_hash("events")
+        
         if Paginate::Pager.pagination_enabled?(site)
           # Generate paginated event pages
           generate_paginated_events(site, event_base_path, event_layout_path)
@@ -63,8 +53,7 @@ module Jekyll
       # Returns an array of strings containing the site's events.
       def sorted_events(site)
         events = []
-        #puts site.events 
-        site.events.each_pair do |event, pages|
+        site.data["events"].each_pair do |event, pages|
           events.push(event)
         end
         events.sort!.uniq!
@@ -81,7 +70,7 @@ module Jekyll
 
         # Generate the pages
         for event in events
-          posts_in_event = site.events[event]
+          posts_in_event = site.data["events"][event]
           event_path = File.join(event_base_path, Utils.slugify(event))
           per_page = site.config['paginate']
 
@@ -125,7 +114,7 @@ module Jekyll
 
         # Generate the pages
         for event in events
-          posts_in_event = site.events[event]
+          posts_in_event = site.data["events"][event]
           event_path = File.join(event_base_path, Utils.slugify(event))
 
           site.pages << EventIndexPage.new(site, event_path, INDEXFILE, event, event_layout, posts_in_event, false)
